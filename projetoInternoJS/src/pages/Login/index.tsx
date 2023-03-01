@@ -42,7 +42,7 @@ export function Login(){
             src = {Logo}
             style = {{
               width: 140,
-              height: 60,
+              height: 66,
               marginBottom: 16
             }}
           />
