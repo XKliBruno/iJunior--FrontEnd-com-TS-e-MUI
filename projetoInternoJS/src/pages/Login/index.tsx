@@ -1,22 +1,103 @@
+import { Box,
+  Button,
+  Container,
+  Grid,
+  Link,
+  Paper,
+  TextField,
+  Typography
+} from "@mui/material";
 
+
+import { Image } from "mui-image";
+import Logo from "../../assets/projetoInternoJSLogo.svg";
 
 
 export function Login(){
   return(
-    <div
-      style={{
+    <Container
+      component="main"
+      maxWidth="xs"
+      sx={{
+        minHeight: "100vh",
         display: "flex",
-        flexDirection: "column",
-        gap: 10
+        alignItems: "center",
       }}
     >
-      <h1>Login</h1>
-      <label htmlFor="email" id="email">Email</label>
-      <input type="email" name="email" id="email"/>
-      <label htmlFor="pass" id="pass">Senha</label>
-      <input type="password" name="pass" id="pass"/>
-      <button type="submit">Entrar</button>
+      <Paper
+        sx={{
+          paddingX:10,
+          paddingY: 5
+        }}
+      >
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center"
+          }}
+        >
 
-    </div>
+          <Image 
+            src = {Logo}
+            style = {{
+              width: 140,
+              height: 60,
+              marginBottom: 16
+            }}
+          />
+          <Typography
+            component= "h1"
+            variant="h5"
+            color="secondary"
+            fontWeight="bold"
+          >
+            Login
+          </Typography>
+
+          <Box
+            component = "form"
+            noValidate
+            sx={{ mt: 1}}
+          >
+            <TextField
+              margin="normal"
+              required
+              fullWidth
+              id="email"
+              label="Email Address"
+              name="email"
+              autoComplete="email"
+              autoFocus
+            />
+            <TextField
+              margin="normal"
+              required
+              fullWidth
+              name="password"
+              label="Password"
+              type="password"
+              id="password"
+              autoComplete="current-password"
+            />
+            <Button
+              type="submit"
+              fullWidth
+              variant="contained"
+              sx={{ mt: 3, mb: 2 }}
+            >
+              Entrar
+            </Button>
+            <Grid container justifyContent="center">
+              <Link href="#" variant="body2">
+                  Esqueceu sua senha?
+              </Link>
+            </Grid>
+
+          </Box>
+        </Box>
+
+      </Paper>
+    </Container>
   );
 }
