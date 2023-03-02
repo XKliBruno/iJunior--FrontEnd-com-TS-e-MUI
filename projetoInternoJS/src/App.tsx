@@ -2,6 +2,8 @@ import CssBaseline from "@mui/material/CssBaseline";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { Login } from "./pages/Login";
 
+import { ptBR } from "@mui/material/locale";
+
 
 function App(): JSX.Element{
 
@@ -24,8 +26,16 @@ function App(): JSX.Element{
         "Poppins",
         "sans-serif"
       ].join(",")
-    }
-  });
+    },
+    breakpoints:{
+      values: {
+        xs: 0,
+        sm: 900,
+        md: 900,
+        lg: 1200,
+        xl: 1536
+      }}
+  }, ptBR);
 
   
   return(
