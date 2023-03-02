@@ -10,10 +10,23 @@ import { Box,
 
 
 import { Image } from "mui-image";
+import { useNavigate } from "react-router-dom";
 import Logo from "../../assets/projetoInternoJSLogo.svg";
 
 
 export function Login(){
+
+  const navigate = useNavigate();
+  
+  function handleSubimit(
+    event:React.FormEvent<HTMLFormElement>
+  ) {
+    event.preventDefault();
+    //TODO: mandar pro backend
+    navigate("../");
+  }
+  
+
   return(
     <Container
       component="main"
@@ -59,6 +72,7 @@ export function Login(){
             component = "form"
             noValidate
             sx={{ mt: 1}}
+            onSubmit={handleSubimit}
           >
             <TextField
               margin="normal"
