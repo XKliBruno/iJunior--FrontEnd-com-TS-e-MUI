@@ -1,8 +1,8 @@
 import CssBaseline from "@mui/material/CssBaseline";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { Login } from "./pages/Login";
 
 import { ptBR } from "@mui/material/locale";
+import { AppRoutes } from "./routes/AppRoutes";
 
 
 function App(): JSX.Element{
@@ -41,7 +41,7 @@ function App(): JSX.Element{
   return(
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Login/>
+      <AppRoutes/>
     </ThemeProvider>
      
     
